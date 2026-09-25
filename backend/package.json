@@ -1,0 +1,62 @@
+{
+  
+  "name": "backend",
+  
+  "version": "1.0.0",
+  
+  "description": "",
+  
+  "main": "index.js",
+  
+  "type": "module",
+  
+  "scripts": {
+  
+    
+  "start": "node index.js",
+  
+    
+  "ingest": "node ingest.js"
+  
+  },
+  
+  "keywords": [],
+  
+  "author": "",
+  
+  "license": "ISC",
+  
+  "dependencies": {
+  
+    
+  "@google/generative-ai": "^0.24.1",
+  
+    
+  "@langchain/core": "^1.2.11",
+  
+    
+  "@langchain/google-genai": "^2.3.2",
+  
+    
+  "@langchain/openai": "^1.5.13",
+  
+    
+  "@langchain/textsplitters": "^1.0.1",
+  
+    
+  "cors": "^2.8.6",
+  
+    
+  "dotenv": "^18.0.1",
+  
+    
+  "express": "^5.2.1",
+  
+    
+  "mongodb": "^7.6.0",
+  
+    
+  "pdf-parse": "^2.4.5"
+  
+  }
+}

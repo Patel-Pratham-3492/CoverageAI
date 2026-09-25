@@ -1,0 +1,109 @@
+# ============================================
+# Dependencies
+# ============================================
+
+node_modules/
+
+
+# ============================================
+# Build output
+# ============================================
+
+dist/
+dist-ssr/
+
+
+# ============================================
+# Environment variables
+# ============================================
+
+.env
+.env.local
+.env.development
+.env.development.local
+.env.production
+.env.production.local
+.env.test
+.env.test.local
+
+# Keep the example environment file
+!.env.example
+
+
+# ============================================
+# Logs
+# ============================================
+
+logs/
+*.log
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+
+# ============================================
+# Local development
+# ============================================
+
+*.local
+.vite/
+.cache/
+
+
+# ============================================
+# Test / coverage
+# ============================================
+
+coverage/
+
+
+# ============================================
+# Editor directories and files
+# ============================================
+
+.vscode/*
+!.vscode/extensions.json
+
+.idea/
+
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+
+# ============================================
+# Operating system files
+# ============================================
+
+.DS_Store
+Thumbs.db
+
+
+# ============================================
+# Temporary files
+# ============================================
+
+*.tmp
+*.temp
+
+
+# ============================================
+# Sensitive / private files
+# ============================================
+
+*.pem
+*.key
+*.crt
+
+
+# ============================================
+# Policy documents
+# ============================================
+
+# Do not upload insurance policy PDFs
+*.pdf

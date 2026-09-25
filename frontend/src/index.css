@@ -1,0 +1,1160 @@
+/* =========================================================
+   RESPONSIVE / DEVICE COMPATIBILITY
+   CoverageAI
+========================================================= */
+
+/* ---------- GLOBAL ---------- */
+
+html,
+body,
+#root {
+  width: 100%;
+  min-width: 0;
+  min-height: 100%;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+}
+
+button,
+input {
+  max-width: 100%;
+}
+
+.app-shell {
+  width: 100%;
+  height: 100dvh;
+  min-height: 100dvh;
+  overflow: hidden;
+}
+
+/* =========================================================
+   LARGE DESKTOP
+   1400px+
+========================================================= */
+
+@media (min-width: 1400px) {
+
+  .sidebar {
+    width: 285px;
+    min-width: 285px;
+  }
+
+  .conversation-inner,
+  .input-wrapper {
+    width: min(900px, calc(100% - 64px));
+  }
+
+  .conversation-inner {
+    padding-top: 60px;
+  }
+
+  .welcome h1 {
+    font-size: 46px;
+  }
+
+  .quick-grid {
+    gap: 12px;
+  }
+
+  .question-card {
+    padding: 16px;
+  }
+}
+
+
+/* =========================================================
+   STANDARD LAPTOP / DESKTOP
+   901px - 1399px
+========================================================= */
+
+@media (min-width: 901px) and (max-width: 1399px) {
+
+  .sidebar {
+    width: 255px;
+    min-width: 255px;
+  }
+
+  .conversation-inner,
+  .input-wrapper {
+    width: min(820px, calc(100% - 44px));
+  }
+
+  .conversation-inner {
+    padding-top: 38px;
+  }
+
+  .welcome h1 {
+    font-size: 40px;
+  }
+
+  .quick-grid {
+    gap: 9px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+   601px - 900px
+========================================================= */
+
+@media (min-width: 601px) and (max-width: 900px) {
+
+  .app-shell {
+    position: relative;
+  }
+
+  /* Sidebar becomes overlay drawer */
+
+  .sidebar {
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    width: 270px;
+    min-width: 270px;
+
+    transform: translateX(0);
+
+    box-shadow:
+      12px 0 35px rgba(25, 30, 50, 0.10);
+  }
+
+  .sidebar-closed {
+    transform: translateX(-105%);
+
+    width: 270px;
+    min-width: 270px;
+
+    padding-left: 18px;
+    padding-right: 18px;
+
+    border-right: 1px solid #e9ebf2;
+  }
+
+  .main-area {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .topbar {
+    height: 60px;
+    min-height: 60px;
+    padding: 0 18px;
+  }
+
+  .conversation-inner,
+  .input-wrapper {
+    width: calc(100% - 32px);
+  }
+
+  .conversation-inner {
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
+
+  .welcome {
+    padding-top: 15px;
+  }
+
+  .welcome h1 {
+    font-size: 38px;
+  }
+
+  .welcome-description {
+    max-width: 480px;
+  }
+
+  .quick-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .question-card {
+    min-width: 0;
+  }
+
+  .question-content {
+    min-width: 0;
+  }
+
+  .active-plan {
+    max-width: 500px;
+  }
+
+  .input-area {
+    padding: 11px 16px 10px;
+  }
+
+}
+
+
+/* =========================================================
+   LARGE PHONE
+   481px - 600px
+========================================================= */
+
+@media (min-width: 481px) and (max-width: 600px) {
+
+  .app-shell {
+    height: 100dvh;
+  }
+
+  /* Sidebar */
+
+  .sidebar {
+    position: fixed;
+    z-index: 200;
+
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    width: 275px;
+    min-width: 275px;
+
+    transform: translateX(0);
+
+    box-shadow:
+      15px 0 40px rgba(20, 25, 40, 0.13);
+  }
+
+  .sidebar-closed {
+    transform: translateX(-110%);
+
+    width: 275px;
+    min-width: 275px;
+
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  /* Main */
+
+  .main-area {
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* Header */
+
+  .topbar {
+    height: 58px;
+    min-height: 58px;
+
+    padding:
+      0 13px;
+
+    gap: 8px;
+  }
+
+  .topbar-left {
+    gap: 8px;
+  }
+
+  .breadcrumb {
+    display: none;
+  }
+
+  .change-provider-btn {
+    width: 36px;
+    height: 34px;
+
+    padding: 0;
+
+    justify-content: center;
+  }
+
+  .change-provider-btn span {
+    display: none;
+  }
+
+  /* Conversation */
+
+  .conversation-inner {
+    width: calc(100% - 24px);
+
+    padding:
+      25px 0 25px;
+  }
+
+  .welcome {
+    padding-top: 4px;
+  }
+
+  .welcome-badge {
+    font-size: 8px;
+    padding: 6px 10px;
+  }
+
+  .welcome-icon {
+    width: 60px;
+    height: 60px;
+
+    border-radius: 19px;
+
+    margin:
+      18px auto 15px;
+  }
+
+  .welcome-icon-inner {
+    border-radius: 15px;
+    font-size: 23px;
+  }
+
+  .welcome h1 {
+    font-size: 32px;
+    line-height: 1.13;
+    letter-spacing: -1.2px;
+  }
+
+  .welcome-description {
+    font-size: 11px;
+    line-height: 1.65;
+
+    margin-top: 13px;
+
+    max-width: 430px;
+    padding: 0 8px;
+  }
+
+  /* Plan */
+
+  .active-plan {
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 9px 10px;
+  }
+
+  .active-plan-icon {
+    width: 33px;
+    height: 33px;
+  }
+
+  .active-plan-info strong {
+    font-size: 9px;
+  }
+
+  /* Questions */
+
+  .quick-section {
+    margin-top: 27px;
+  }
+
+  .quick-grid {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+
+  .question-card {
+    min-height: 56px;
+    padding: 10px;
+  }
+
+  .question-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .question-content span {
+    font-size: 10px;
+  }
+
+  .question-content small {
+    font-size: 8px;
+  }
+
+  /* Messages */
+
+  .user-message {
+    max-width: 88%;
+
+    padding:
+      10px 13px;
+
+    border-radius:
+      15px 15px 4px 15px;
+
+    font-size: 12px;
+  }
+
+  .assistant-message {
+    border-radius: 14px;
+  }
+
+  .assistant-header {
+    min-height: 49px;
+    padding: 9px 11px;
+  }
+
+  .assistant-avatar {
+    width: 27px;
+    height: 27px;
+  }
+
+  .assistant-title strong {
+    font-size: 10px;
+  }
+
+  .response-plan {
+    display: none;
+  }
+
+  .assistant-content {
+    padding: 14px;
+
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  /* Input */
+
+  .input-area {
+    padding:
+      8px 9px
+      max(8px, env(safe-area-inset-bottom));
+  }
+
+  .chat-form {
+    height: 48px;
+    border-radius: 14px;
+    padding-left: 11px;
+  }
+
+  .input-icon {
+    font-size: 13px;
+    margin-right: 7px;
+  }
+
+  .chat-form input {
+    font-size: 12px;
+  }
+
+  .send-btn {
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+  }
+
+  .input-footer {
+    padding:
+      6px 3px 0;
+
+    font-size: 7px;
+  }
+
+  .input-footer span:last-child {
+    display: none;
+  }
+
+  /* Modal */
+
+  .modal-backdrop {
+    padding: 12px;
+  }
+
+  .provider-modal {
+    max-height: calc(100dvh - 24px);
+    overflow-y: auto;
+
+    padding: 20px;
+
+    border-radius: 18px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONE
+   0px - 480px
+========================================================= */
+
+@media (max-width: 480px) {
+
+  /* -------------------------
+     APP
+  ------------------------- */
+
+  .app-shell {
+    width: 100%;
+    height: 100dvh;
+    min-height: 100dvh;
+    overflow: hidden;
+  }
+
+  /* -------------------------
+     SIDEBAR
+  ------------------------- */
+
+  .sidebar {
+    position: fixed;
+    z-index: 500;
+
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    width: 82%;
+    max-width: 290px;
+    min-width: 0;
+
+    padding:
+      20px 15px;
+
+    transform: translateX(0);
+
+    box-shadow:
+      15px 0 45px rgba(25, 30, 45, 0.15);
+  }
+
+  .sidebar-closed {
+    width: 82%;
+    max-width: 290px;
+    min-width: 0;
+
+    transform: translateX(-110%);
+
+    padding:
+      20px 15px;
+  }
+
+  .brand {
+    padding:
+      2px 7px 23px;
+  }
+
+  .brand-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .brand-name {
+    font-size: 15px;
+  }
+
+  .new-chat-btn {
+    height: 43px;
+  }
+
+  /* -------------------------
+     MAIN
+  ------------------------- */
+
+  .main-area {
+    width: 100%;
+    min-width: 0;
+    height: 100dvh;
+  }
+
+  /* -------------------------
+     HEADER
+  ------------------------- */
+
+  .topbar {
+    width: 100%;
+    height: 55px;
+    min-height: 55px;
+
+    padding:
+      0 11px;
+  }
+
+  .topbar-left {
+    gap: 5px;
+  }
+
+  .icon-btn {
+    width: 35px;
+    height: 35px;
+  }
+
+  .breadcrumb {
+    display: none;
+  }
+
+  .change-provider-btn {
+    width: 34px;
+    height: 34px;
+
+    padding: 0;
+
+    justify-content: center;
+  }
+
+  .change-provider-btn span {
+    display: none;
+  }
+
+  /* -------------------------
+     CONVERSATION
+  ------------------------- */
+
+  .conversation-area {
+    width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .conversation-inner {
+    width: calc(100% - 20px);
+    max-width: none;
+
+    padding:
+      22px 0 25px;
+  }
+
+  /* -------------------------
+     HERO
+  ------------------------- */
+
+  .welcome {
+    width: 100%;
+    padding-top: 0;
+  }
+
+  .welcome-badge {
+    font-size: 7.5px;
+    padding: 5px 9px;
+  }
+
+  .welcome-icon {
+    width: 55px;
+    height: 55px;
+
+    border-radius: 17px;
+
+    margin:
+      16px auto 14px;
+  }
+
+  .welcome-icon-inner {
+    border-radius: 14px;
+    font-size: 21px;
+  }
+
+  .welcome h1 {
+    font-size: 29px;
+    line-height: 1.12;
+    letter-spacing: -1.1px;
+  }
+
+  .welcome-description {
+    width: 100%;
+
+    font-size: 10px;
+    line-height: 1.6;
+
+    margin-top: 12px;
+
+    padding: 0 4px;
+  }
+
+  /* -------------------------
+     ACTIVE PLAN
+  ------------------------- */
+
+  .active-plan {
+    width: 100%;
+
+    margin-top: 18px;
+
+    padding: 8px;
+
+    border-radius: 11px;
+  }
+
+  .active-plan-icon {
+    width: 31px;
+    height: 31px;
+
+    font-size: 13px;
+  }
+
+  .active-plan-info span {
+    font-size: 7px;
+  }
+
+  .active-plan-info strong {
+    font-size: 8.5px;
+  }
+
+  .active-check {
+    font-size: 12px;
+  }
+
+  /* -------------------------
+     QUICK QUESTIONS
+  ------------------------- */
+
+  .quick-section {
+    margin-top: 25px;
+  }
+
+  .quick-title {
+    margin-bottom: 8px;
+  }
+
+  .quick-title span {
+    font-size: 7px;
+  }
+
+  .quick-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 6px;
+  }
+
+  .question-card {
+    width: 100%;
+    min-width: 0;
+    min-height: 54px;
+
+    padding: 9px;
+
+    border-radius: 11px;
+  }
+
+  .question-icon {
+    width: 30px;
+    height: 30px;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+  }
+
+  .question-content {
+    min-width: 0;
+  }
+
+  .question-content span {
+    font-size: 9.5px;
+  }
+
+  .question-content small {
+    font-size: 7.5px;
+    margin-top: 2px;
+  }
+
+  .question-arrow {
+    font-size: 9px;
+  }
+
+  /* -------------------------
+     USER MESSAGE
+  ------------------------- */
+
+  .user-row {
+    width: 100%;
+  }
+
+  .user-message {
+    max-width: 90%;
+
+    padding:
+      9px 12px;
+
+    font-size: 11px;
+
+    border-radius:
+      14px 14px 4px 14px;
+  }
+
+  /* -------------------------
+     ASSISTANT MESSAGE
+  ------------------------- */
+
+  .assistant-message {
+    width: 100%;
+    border-radius: 13px;
+  }
+
+  .assistant-header {
+    min-height: 46px;
+
+    padding:
+      8px 10px;
+
+    gap: 8px;
+  }
+
+  .assistant-avatar {
+    width: 26px;
+    height: 26px;
+
+    border-radius: 8px;
+
+    font-size: 11px;
+  }
+
+  .assistant-title strong {
+    font-size: 9px;
+  }
+
+  .assistant-title span {
+    font-size: 7px;
+  }
+
+  .response-plan {
+    display: none;
+  }
+
+  .assistant-content {
+    padding: 12px;
+
+    font-size: 11px;
+    line-height: 1.65;
+
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .assistant-content h1 {
+    font-size: 20px;
+  }
+
+  .assistant-content h2 {
+    font-size: 17px;
+  }
+
+  .assistant-content h3 {
+    font-size: 14px;
+  }
+
+  .assistant-content ul,
+  .assistant-content ol {
+    padding-left: 17px;
+  }
+
+  /* -------------------------
+     THINKING
+  ------------------------- */
+
+  .thinking-row {
+    gap: 8px;
+  }
+
+  .thinking-avatar {
+    width: 28px;
+    height: 28px;
+  }
+
+  .thinking-title {
+    font-size: 9px;
+  }
+
+  .thinking-subtitle {
+    font-size: 7px;
+  }
+
+  /* -------------------------
+     INPUT
+  ------------------------- */
+
+  .input-area {
+    width: 100%;
+
+    padding:
+      7px 8px
+      max(7px, env(safe-area-inset-bottom));
+
+    flex-shrink: 0;
+  }
+
+  .input-wrapper {
+    width: 100%;
+    max-width: none;
+  }
+
+  .chat-form {
+    width: 100%;
+    height: 46px;
+
+    padding:
+      0 5px 0 10px;
+
+    border-radius: 13px;
+  }
+
+  .input-icon {
+    display: none;
+  }
+
+  .chat-form input {
+    min-width: 0;
+    width: 100%;
+
+    font-size: 11px;
+  }
+
+  .chat-form input::placeholder {
+    font-size: 10px;
+  }
+
+  .send-btn {
+    width: 34px;
+    min-width: 34px;
+    height: 34px;
+
+    border-radius: 9px;
+  }
+
+  .input-footer {
+    display: none;
+  }
+
+  /* -------------------------
+     MODAL
+  ------------------------- */
+
+  .modal-backdrop {
+    align-items: flex-end;
+
+    padding: 0;
+
+    background:
+      rgba(20, 24, 35, .42);
+  }
+
+  .provider-modal {
+    width: 100%;
+    max-width: none;
+
+    max-height:
+      min(90dvh, 620px);
+
+    overflow-y: auto;
+
+    padding:
+      19px 15px
+      max(19px, env(safe-area-inset-bottom));
+
+    border-radius:
+      20px 20px 0 0;
+
+    box-shadow:
+      0 -15px 50px rgba(20, 25, 40, .14);
+  }
+
+  .modal-header {
+    margin-bottom: 16px;
+  }
+
+  .modal-header h2 {
+    font-size: 19px;
+  }
+
+  .modal-header p {
+    font-size: 9px;
+  }
+
+  .modal-provider {
+    padding: 9px;
+    min-height: 58px;
+  }
+
+  .modal-provider-icon {
+    width: 35px;
+    height: 35px;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+  }
+
+  .modal-provider-info strong {
+    font-size: 9.5px;
+  }
+
+  .modal-provider-info span {
+    font-size: 8px;
+  }
+
+  .modal-footer {
+    font-size: 7.5px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   360px and below
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .conversation-inner {
+    width: calc(100% - 16px);
+    padding-top: 18px;
+  }
+
+  .welcome h1 {
+    font-size: 26px;
+  }
+
+  .welcome-description {
+    font-size: 9px;
+  }
+
+  .welcome-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .active-plan {
+    margin-top: 15px;
+  }
+
+  .question-card {
+    min-height: 51px;
+    padding: 8px;
+  }
+
+  .question-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .question-content span {
+    font-size: 9px;
+  }
+
+  .question-content small {
+    font-size: 7px;
+  }
+
+  .assistant-content {
+    font-size: 10.5px;
+  }
+
+  .user-message {
+    font-size: 10.5px;
+  }
+
+  .chat-form {
+    height: 44px;
+  }
+
+  .send-btn {
+    width: 32px;
+    min-width: 32px;
+    height: 32px;
+  }
+}
+
+
+/* =========================================================
+   LANDSCAPE PHONES
+========================================================= */
+
+@media (max-height: 500px) and (orientation: landscape) {
+
+  .topbar {
+    height: 50px;
+    min-height: 50px;
+  }
+
+  .conversation-inner {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .welcome-icon {
+    display: none;
+  }
+
+  .welcome-badge {
+    margin-bottom: 8px;
+  }
+
+  .welcome h1 {
+    font-size: 25px;
+  }
+
+  .welcome-description {
+    margin-top: 8px;
+  }
+
+  .active-plan {
+    margin-top: 12px;
+  }
+
+  .quick-section {
+    margin-top: 18px;
+  }
+
+  .input-area {
+    padding-top: 5px;
+  }
+
+  .input-footer {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+
+  .question-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .new-chat-btn:hover {
+    transform: none;
+  }
+
+  .send-btn:hover:not(:disabled) {
+    transform: none;
+  }
+
+  .provider-card:hover,
+  .modal-provider:hover {
+    background: inherit;
+  }
+
+  /* Prevent accidental text selection on buttons */
+
+  button {
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY / REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

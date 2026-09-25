@@ -1,0 +1,304 @@
+.policy-overlay {
+  position: fixed;
+  inset: 0;
+
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background:
+    rgba(20, 24, 38, 0.42);
+
+  backdrop-filter: blur(8px);
+
+  animation: policyFadeIn 0.18s ease;
+}
+
+.policy-modal {
+  width: 100%;
+  max-width: 480px;
+
+  max-height:
+    calc(100dvh - 40px);
+
+  overflow-y: auto;
+
+  padding: 25px;
+
+  border-radius: 21px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 30px 80px
+    rgba(23, 27, 40, 0.2);
+
+  animation: policyModalIn 0.2s ease;
+}
+
+.policy-modal-header {
+  display: flex;
+  justify-content: space-between;
+
+  gap: 18px;
+
+  margin-bottom: 21px;
+}
+
+.policy-eyebrow {
+  margin-bottom: 6px;
+
+  color: #8f95a4;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 1.1px;
+}
+
+.policy-modal-header h2 {
+  margin: 0;
+
+  color: #252d3e;
+
+  font-size: 21px;
+  letter-spacing: -0.5px;
+}
+
+.policy-modal-header p {
+  max-width: 350px;
+
+  margin: 6px 0 0;
+
+  color: #9298a7;
+
+  font-size: 10px;
+  line-height: 1.55;
+}
+
+.policy-close {
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: #f5f6f8;
+  color: #8e94a1;
+
+  cursor: pointer;
+}
+
+.policy-close:hover {
+  background: #eeeff3;
+  color: #505768;
+}
+
+.policy-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.policy-option {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  padding: 11px;
+
+  border: 1px solid #eceef3;
+  border-radius: 13px;
+
+  background: white;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition: 0.18s ease;
+}
+
+.policy-option:hover {
+  border-color: #dcd8ff;
+  background: #fafaff;
+}
+
+.policy-option.selected {
+  border-color: #cfc9ff;
+  background: #f8f7ff;
+}
+
+.policy-option-icon {
+  width: 39px;
+  height: 39px;
+  min-width: 39px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  font-size: 16px;
+}
+
+.policy-option-info {
+  min-width: 0;
+  flex: 1;
+}
+
+.policy-option-info strong {
+  display: block;
+
+  color: #3c4455;
+
+  font-size: 11px;
+  line-height: 1.4;
+
+  overflow-wrap: anywhere;
+}
+
+.policy-option-info span {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #9ca1ae;
+
+  font-size: 9px;
+}
+
+.policy-check {
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #e2e4ea;
+  border-radius: 50%;
+
+  background: white;
+  color: white;
+
+  font-size: 11px;
+}
+
+.policy-option.selected .policy-check {
+  border-color: #6d5dfb;
+  background: #6d5dfb;
+}
+
+.policy-modal-footer {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  margin-top: 18px;
+  padding-top: 14px;
+
+  border-top: 1px solid #f0f1f4;
+
+  color: #a1a6b2;
+
+  font-size: 8.5px;
+}
+
+.policy-modal-footer i {
+  color: #6d5dfb;
+}
+
+.policy-empty {
+  padding: 20px;
+
+  border-radius: 12px;
+
+  background: #f8f9fc;
+
+  color: #858b9a;
+
+  text-align: center;
+
+  font-size: 11px;
+}
+
+@keyframes policyFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes policyModalIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 500px) {
+  .policy-overlay {
+    align-items: flex-end;
+
+    padding:
+      0
+      10px
+      calc(10px + env(safe-area-inset-bottom));
+  }
+
+  .policy-modal {
+    max-height: 85dvh;
+
+    padding: 20px;
+
+    border-radius:
+      20px
+      20px
+      0
+      0;
+
+    animation: policySheetIn 0.22s ease;
+  }
+
+  .policy-modal-header h2 {
+    font-size: 19px;
+  }
+
+  .policy-modal-header p {
+    font-size: 9px;
+  }
+
+  .policy-option {
+    min-height: 62px;
+  }
+}
+
+@keyframes policySheetIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
