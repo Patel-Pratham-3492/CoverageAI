@@ -1,19 +1,19 @@
 export const POLICIES = [
   {
-    id: "United-Healthcare-Student-Resources-2627",
-    name: "United Healthcare Student Resources 26-27",
-    tag: "Active Policy",
-    icon: "bi-shield-check",
-    color: "#4F8CFF",
-    policy_name: "United-Healthcare-Student-Resources-2627",
-  },
-  {
     id: "Wellfleet-Providence-Benefits-Coverage-2627",
     name: "Wellfleet Providence Benefits 26-27",
     tag: "Active Policy",
     icon: "bi-heart-pulse",
     color: "#6D5DFB",
     policy_name: "Wellfleet-Providence-Benefits-Coverage-2627",
+  },
+  {
+    id: "United-Healthcare-Student-Resources-2627",
+    name: "United Healthcare Student Resources 26-27",
+    tag: "Active Policy",
+    icon: "bi-shield-check",
+    color: "#4F8CFF",
+    policy_name: "United-Healthcare-Student-Resources-2627",
   },
 ];
 
